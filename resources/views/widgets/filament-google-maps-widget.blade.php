@@ -40,7 +40,6 @@
             {!! ($pollingInterval = $this->getPollingInterval()) ? "wire:poll.{$pollingInterval}=\"updateMapData\"" : '' !!}
         >
             <div
-                x-ignore
                 ax-load
                 ax-load-src="{{ \Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('filament-google-maps-widget', 'cheesegrits/filament-google-maps') }}"
                 x-data="filamentGoogleMapsWidget({
@@ -48,7 +47,6 @@
                             config: {{ $this->getMapConfig() }},
                             mapEl: $refs.map,
                         })"
-                wire:ignore
                 @if ($maxHeight = $this->getMaxHeight())
                     style=" max-height: {{ $maxHeight }}"
                 @endif
